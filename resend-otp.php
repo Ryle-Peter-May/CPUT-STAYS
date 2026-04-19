@@ -43,6 +43,6 @@ $stmt->close();
 sendMail($email, "Your new OTP Code", "Your new OTP is: $otp. It will expire in 5 minutes.");
 
 $_SESSION["otp_message"] = "A new OTP has been sent to your email.";
-header("Location: verify-otp.php");
+header("Location: verify_otp.php");
 exit;
 ?>
