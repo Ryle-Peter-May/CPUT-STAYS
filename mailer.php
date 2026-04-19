@@ -18,7 +18,7 @@ function sendMail($to, $subject, $message) {
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
-        $mail->setFrom('rylemay198@gmail.com', 'CPUT STAYS');
+        $mail->setFrom('cputstays00@gmail.com', 'CPUT STAYS');
         $mail->addAddress($to);
         $mail->isHTML(false);
         $mail->Subject = $subject;
