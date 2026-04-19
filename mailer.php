@@ -12,12 +12,12 @@ function sendMail($to, $subject, $message) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'cputstays@gmail.com';
-        $mail->Password = 'xcab zmtb scqd csai';
+        $mail->Username = 'rylemay198@gmail.com';
+        $mail->Password = 'usge uvur mnkh hfew';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
-        $mail->setFrom('cputstays@gmail.com', 'CPUT STAYS');
+        $mail->setFrom('rylemay198@gmail.com', 'CPUT STAYS');
         $mail->addAddress($to);
         $mail->isHTML(false);
         $mail->Subject = $subject;
