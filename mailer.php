@@ -5,6 +5,7 @@ use PHPMailer\PHPMailer\Exception;
 require __DIR__ . '/PHPMailer/PHPMailer/src/Exception.php';
 require __DIR__ . '/PHPMailer/PHPMailer/src/PHPMailer.php';
 require __DIR__ . '/PHPMailer/PHPMailer/src/SMTP.php';
+require __DIR__ . '/../config.php';
 
 function sendMail($to, $subject, $message) {
     $mail = new PHPMailer(true);
@@ -12,8 +13,8 @@ function sendMail($to, $subject, $message) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'rylemay198@gmail.com';
-        $mail->Password = 'usge uvur mnkh hfew';
+        $mail->Username = SMTP_USER;
+        $mail->Password = SMTP_PASS;
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
