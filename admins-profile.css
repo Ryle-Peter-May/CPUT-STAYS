@@ -1,0 +1,151 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+
+header {
+  background: linear-gradient(135deg, #003366 0%, #0066cc 70%);
+  color: white;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 25px;
+  background-color: rgba(255,255,255,0.2);
+  transition: 0.3s ease;
+}
+
+header nav a:hover {
+  background-color: white;
+  color: #003366;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+main.form-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+main h1 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+main a {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #0073e6;
+  font-weight: 600;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+
+main section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f4f8ff;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+main section h2 {
+  color: #003366;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+main section p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+main section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+main section ul li {
+  padding: 10px 12px;
+  background: white;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+
+footer {
+  background-color: #002147;
+  color: white;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.25);
+  margin-top: 50px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+  }
+
+  header nav a {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  main.form-container {
+    padding: 25px;
+  }
+
+  main section h2 {
+    font-size: 1.3rem;
+  }
+
+  main h1 {
+    font-size: 1.6rem;
+  }
+}

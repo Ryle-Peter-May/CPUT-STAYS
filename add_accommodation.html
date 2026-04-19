@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Accommodation</title>
+    <link rel="stylesheet" href="add_accommodation.css" />
+    <style>
+      main {
+        max-width: 1000px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      h2,
+      h3 {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      label {
+        display: block;
+        margin: 12px 0 6px;
+        font-weight: bold;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 18px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+      textarea {
+        resize: vertical;
+      }
+      .room-block {
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        background: #f9f9f9;
+      }
+      .remove-btn {
+        background: red;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .add-btn,
+      .submit-btn {
+        background: #0073e6;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 15px;
+        display: inline-block;
+      }
+      .add-btn:hover,
+      .submit-btn:hover {
+        background: #005bb5;
+      }
+      .actions {
+        text-align: center;
+        margin-top: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="admin-panel.php" style="text-decoration: none; color: white">
+          <img
+            src="logo.jpg"
+            alt="cput logo"
+            style="height: 40px; margin-right: 10px; vertical-align: middle"
+          />
+          CPUT STAYS
+        </a>
+      </div>
+      <nav>
+        <a href="admins-profile.php">Profile</a>
+        <a href="admins-booking.php">Bookings</a>
+        <a href="logout.php">Logout</a>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Add Accommodation</h2>
+
+      <form action="add_accommodation.php" method="POST">
+        <h3>Accommodation Details</h3>
+        <label for="name">Accommodation Name</label>
+        <input type="text" name="name" id="name" required />
+
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" required />
+
+        <label for="contact_num">Contact Number</label>
+        <input type="text" name="contact_num" id="contact_num" required />
+
+        <label for="amenities">Amenities</label>
+        <textarea name="amenities" id="amenities" rows="4" required></textarea>
+
+        <h3>Room Information</h3>
+        <div id="rooms-container">
+          <div class="room-block">
+            <label>Room Type</label>
+            <select>
+              <option value="Single">Single</option>
+              <option value="Double">Double</option>
+            </select>
+            <!-- <input type="text" name="rm_type[]" required /> -->
+
+            <label>Total Rooms</label>
+            <input type="number" name="tot_rms[]" required min="1" />
+
+            <label>Price per Room</label>
+            <input type="number" name="price[]" required step="0.01" />
+
+            <button type="button" class="remove-btn" onclick="removeRoom(this)">
+              Remove
+            </button>
+          </div>
+        </div>
+
+        <button type="button" class="add-btn" onclick="addRoom()">
+          + Add Another Room
+        </button>
+
+        <div class="actions">
+          <button type="submit" class="submit-btn">Save Accommodation</button>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <p>© 2025 CPUT STAYS. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function addRoom() {
+        const container = document.getElementById("rooms-container");
+        const block = document.createElement("div");
+        block.classList.add("room-block");
+        block.innerHTML = `
+        <label>Room Type</label>
+        <select>
+              <option value="Single">Single</option>
+              <option value="Double">Double</option>
+        </select>
+
+        <label>Total Rooms</label>
+        <input type="number" name="tot_rms[]" required min="1">
+
+        <label>Price per Room</label>
+        <input type="number" name="price[]" required step="0.01">
+
+        <button type="button" class="remove-btn" onclick="removeRoom(this)">Remove</button>
+      `;
+        container.appendChild(block);
+      }
+
+      function removeRoom(button) {
+        button.parentElement.remove();
+      }
+    </script>
+  </body>
+</html>
