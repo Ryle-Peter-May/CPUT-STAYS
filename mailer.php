@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\Exception;
 require __DIR__ . '/PHPMailer/PHPMailer/src/Exception.php';
 require __DIR__ . '/PHPMailer/PHPMailer/src/PHPMailer.php';
 require __DIR__ . '/PHPMailer/PHPMailer/src/SMTP.php';
-require __DIR__ . '/../.config.php';
+require __DIR__ . '/.config.php';
 
 function sendMail($to, $subject, $message) {
     $mail = new PHPMailer(true);
