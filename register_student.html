@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <link rel="stylesheet" href="register_student.css" />
+    <!-- <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src ="validation.js" defer></script> -->
+  </head>
+  <body>
+    <header>
+      <div class="logo">CPUT STAYS</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="login.php">Login</a>
+      </nav>
+    </header>
+
+    <main class="form-container">
+      <h2>Student Registration</h2>
+      <form action="register.php" method="post" id="register-form" novalidate>
+        <input type="hidden" name="role" value="student" />
+        <div>
+          <label for="id_num">ID Number</label>
+          <input type="text" id="id_num" name="id_num" required />
+        </div>
+
+        <div>
+          <label for="first_name">First Name</label>
+          <input type="text" id="first_name" name="first_name" required />
+        </div>
+
+        <div>
+          <label for="last_name">Last Name</label>
+          <input type="text" id="last_name" name="last_name" required />
+        </div>
+
+        <div>
+          <label for="stud_number">Student Number</label>
+          <input type="text" id="stud_number" name="stud_number" required />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div>
+          <label for="cell_number">Cell Number</label>
+          <input type="tel" id="cell_number" name="cell_number" required />
+        </div>
+
+        <div>
+          <label for="enrollment_year" id="#enrollment_year">Enrolment Year</label>
+          <input
+            type="number"
+            id="enrollment_year"
+            name="enrollment_year"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div>
+          <label for="funding">Funding</label>
+          <select id="funding" name="funding" required>
+            <option>Bursary</option>
+            <option>Self-Funded</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button type="submit">Register</button>
+      </form>
+    </main>
+    <footer>
+      <p>© 2025 CPUT STAYS. All rights reserved.</p>
+    </footer>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("validation script running"); // quick debug
+
+        const validation = new JustValidate("#register-form", {
+          errorFieldCssClass: "is-invalid",
+          errorLabelStyle: { color: "#d93025" },
+        });
+
+        validation
+          .addField("#id_num", [
+            { rule: "required", errorMessage: "ID number is required" },
+            {
+              validator: (value) => /^\d{13}$/.test(value),
+              errorMessage: "ID number must be exactly 13 digits",
+            },
+          ])
+          .addField("#first_name", [
+            { rule: "required", errorMessage: "First name is required" },
+          ])
+          .addField("#last_name", [
+            { rule: "required", errorMessage: "Last name is required" },
+          ])
+          .addField("#stud_number", [
+            { rule: "required", errorMessage: "Student number is required" },
+          ])
+          .addField("#email", [
+            { rule: "required", errorMessage: "Email is required" },
+            { rule: "email", errorMessage: "Enter a valid email address" },
+          ])
+          .addField("#cell_number", [
+            { rule: "required", errorMessage: "Cell number is required" },
+          ])
+          .addField("#enrollment_year", [
+            { rule: "required", errorMessage: "Enrollment Year is required" },
+          ])
+
+          .addField("#password", [
+            { rule: "required", errorMessage: "Password is required" },
+            {
+              validator: (value) => value.length >= 8,
+              errorMessage: "Password must be at least 8 characters",
+            },
+          ])
+
+          .onSuccess((event) => {
+            event.target.submit();
+          });
+      });
+    </script>
+  </body>
+</html>

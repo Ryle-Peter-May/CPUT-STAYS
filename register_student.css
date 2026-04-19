@@ -1,0 +1,153 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+
+header {
+  background: linear-gradient(135deg, #003366 0%, #0066cc 70%);
+  color: white;
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+header .logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+  margin-left: 20px;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+header nav a:hover {
+  color: #ffcc00;
+  transform: scale(1.05);
+}
+
+
+.form-container {
+  background-color: white;
+  max-width: 600px;
+  margin: 6rem auto;
+  padding: 3rem 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  font-size: 2rem;
+  color: #003366;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+
+.form-container div {
+  margin-bottom: 1.5rem;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #003366;
+}
+
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 14px 15px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  border-color: #0066cc;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 102, 204, 0.2);
+}
+
+
+.form-container button {
+  width: 100%;
+  padding: 16px 0;
+  background-color: #003366;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+}
+
+.form-container button:hover {
+  background-color: #0073e6;
+  transform: scale(1.05);
+}
+
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+  background-color: #002147;
+  color: white;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.25);
+}
+
+footer p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+
+@media (max-width: 600px) {
+  .form-container {
+    margin: 3rem 1rem;
+    padding: 2rem 1.5rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1.5rem;
+  }
+
+  header nav {
+    margin-top: 0.5rem;
+  }
+
+  header nav a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+}
